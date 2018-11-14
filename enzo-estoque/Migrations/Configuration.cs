@@ -9,7 +9,7 @@ namespace enzo_estoque.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(enzo_estoque.Models.ApplicationDbContext context)

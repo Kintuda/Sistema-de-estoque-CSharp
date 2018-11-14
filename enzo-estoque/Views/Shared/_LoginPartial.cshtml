@@ -15,9 +15,9 @@
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li><a>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</a></li>
-        <li>
-            <a class="nav-link" href="#">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</a></li>
+    <ul class="nav navbar-nav navbar-right" style="display:flex;flex-direction:row;">
+        <a class="btn btn-primary btn-sm" role="button" href='@Url.Action("Login","Account", new { id = "loginLink"})' style="margin-right:10px">Login</a>
+        <a class="btn btn-success btn-sm" role="button" href='@Url.Action("Register","Account", new { id = "registerLink"})'>Registrar</a>
     </ul>
 }
+
