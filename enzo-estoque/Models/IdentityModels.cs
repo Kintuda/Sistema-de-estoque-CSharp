@@ -29,5 +29,7 @@ namespace enzo_estoque.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<enzo_estoque.Models.Produto> Produtoes { get; set; }
     }
 }
