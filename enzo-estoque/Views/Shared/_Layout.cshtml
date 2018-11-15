@@ -13,12 +13,12 @@
 
 <body>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Enzo-estoque</a>
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="@Url.Action("index","Home", new { id = "homeLink"})">Enzo-estoque</a>
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
                 @Html.Partial("_LoginPartial")
             </li>
-               
+
         </ul>
     </nav>
 
@@ -28,7 +28,7 @@
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">
+                            <a class="nav-link active" href="@Url.Action("index","Home", new { id = "homeLink"})">
                                 <span data-feather="home"></span>
                                 Dashboard <span class="sr-only">(current)</span>
                             </a>
@@ -60,7 +60,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span data-feather="layers"></span>
-                                Entrada Saida 
+                                Entrada Saida
                             </a>
                         </li>
                     </ul>
@@ -116,6 +116,7 @@
     <script>
         feather.replace()
     </script>
+    @Styles.Render("~/bundles/fonts")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

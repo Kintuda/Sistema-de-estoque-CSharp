@@ -4,18 +4,24 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Listagem de produtos</h2>
+<div>
+    <h2 class="card-title">Produtos
+        <a class="btn btn-sm btn-outline-secondary" role="button" href='@Url.Action("Create","Produtos", new { id = "createLink"})'>
+            Adicionar
+        </a>
+    </h2>
+</div>
 
-<p>
-    <a class="btn btn-primary" role="button" href='@Url.Action("Create","Produtos")'> Cadastrar</a>
-</p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Descricao)
+            Descrição
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Quantidade)
+            Qtd Estoque
+        </th>
+        <th>
+            Preço base
         </th>
         <th></th>
     </tr>
@@ -26,7 +32,10 @@
             @Html.DisplayFor(modelItem => item.Descricao)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Quantidade)
+            @Html.DisplayFor(modelItem => item.EstoqueInicial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrecoBase)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
