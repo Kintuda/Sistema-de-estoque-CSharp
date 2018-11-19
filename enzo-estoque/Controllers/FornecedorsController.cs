@@ -46,7 +46,7 @@ namespace enzo_estoque.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Nome,Telefone,Cidade")] Fornecedor fornecedor)
+        public ActionResult Create([Bind(Include = "ID,RazaoSocial,NomeFantasia,Telefone,Endereco,Cidade,Email,Cnpj")] Fornecedor fornecedor)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace enzo_estoque.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Nome,Telefone,Cidade")] Fornecedor fornecedor)
+        public ActionResult Edit([Bind(Include = "ID,RazaoSocial,NomeFantasia,Telefone,Endereco,Cidade,Email,Cnpj")] Fornecedor fornecedor)
         {
             if (ModelState.IsValid)
             {

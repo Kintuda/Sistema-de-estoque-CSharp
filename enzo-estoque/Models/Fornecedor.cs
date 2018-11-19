@@ -14,6 +14,7 @@ namespace enzo_estoque.Models
         public string Endereco { get; set; }
         public string Cidade { get; set; }
         public string Email { get; set; }
-        public string Cnpj { get; set; }   
+        public string Cnpj { get; set; }
+        public virtual ICollection<Produto> Produtos{ get; set; }
     }
 }

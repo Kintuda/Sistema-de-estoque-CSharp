@@ -17,7 +17,8 @@ namespace enzo_estoque.Controllers
         // GET: Produtos
         public ActionResult Index()
         {
-            return View(db.Produtoes.ToList());
+            var produtoes = db.Produtoes.Include(p => p.Fornecedor);
+            return View(produtoes.ToList());
         }
 
         // GET: Produtos/Details/5
@@ -38,6 +39,7 @@ namespace enzo_estoque.Controllers
         // GET: Produtos/Create
         public ActionResult Create()
         {
+            ViewBag.FornecedorId = new SelectList(db.Fornecedors, "ID", "RazaoSocial");
             return View();
         }
 
@@ -46,7 +48,7 @@ namespace enzo_estoque.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Descricao,EstoqueInicial,PrecoBase")] Produto produto)
+        public ActionResult Create([Bind(Include = "ID,Descricao,EstoqueInicial,PrecoBase,FornecedorId")] Produto produto)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +57,7 @@ namespace enzo_estoque.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.FornecedorId = new SelectList(db.Fornecedors, "ID", "RazaoSocial", produto.FornecedorID);
             return View(produto);
         }
 
@@ -70,6 +73,7 @@ namespace enzo_estoque.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.FornecedorId = new SelectList(db.Fornecedors, "ID", "RazaoSocial", produto.FornecedorID);
             return View(produto);
         }
 
@@ -78,7 +82,7 @@ namespace enzo_estoque.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Descricao,EstoqueInicial,PrecoBase")] Produto produto)
+        public ActionResult Edit([Bind(Include = "ID,Descricao,EstoqueInicial,PrecoBase,FornecedorId")] Produto produto)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +90,7 @@ namespace enzo_estoque.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.FornecedorId = new SelectList(db.Fornecedors, "ID", "RazaoSocial", produto.FornecedorID);
             return View(produto);
         }
 

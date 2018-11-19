@@ -11,7 +11,7 @@ namespace enzo_estoque.Models
         public string Descricao { get; set; }
         public int EstoqueInicial { get; set; }
         public float PrecoBase{ get; set; }
-        public virtual ICollection<Categoria> Categorias { get; set; }
-        public virtual ICollection<Fornecedor> Fornecedores { get; set; }
+        public int FornecedorID { get; set; }
+        public virtual Fornecedor Fornecedor { get; set; }
     }
 }

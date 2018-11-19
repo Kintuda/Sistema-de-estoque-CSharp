@@ -9,15 +9,23 @@ namespace enzo_estoque.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(enzo_estoque.Models.ApplicationDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
+            context.Fornecedors.AddOrUpdate(x => x.ID,
+            new Models.Fornecedor() {
+                ID = 1,
+                RazaoSocial = "Foobar LTC" ,
+                NomeFantasia = "Foobar",
+                Telefone = "44987231",
+                Endereco = "Rua de testes",
+                Cidade = "Maringa PR",
+                Email = "teste@gmail.com",
+                Cnpj = "897456"
+            }
+            );
         }
     }
 }
