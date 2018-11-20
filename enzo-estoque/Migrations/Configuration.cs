@@ -9,7 +9,7 @@ namespace enzo_estoque.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(enzo_estoque.Models.ApplicationDbContext context)
@@ -24,7 +24,7 @@ namespace enzo_estoque.Migrations
                 Cidade = "Maringa PR",
                 Email = "teste@gmail.com",
                 Cnpj = "897456"
-            }
+                }
             );
         }
     }

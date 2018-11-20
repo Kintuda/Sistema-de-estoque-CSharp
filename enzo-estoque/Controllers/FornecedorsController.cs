@@ -13,7 +13,7 @@ namespace enzo_estoque.Controllers
     public class FornecedorsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
+        [Authorize]
         // GET: Fornecedors
         public ActionResult Index()
         {
@@ -34,7 +34,7 @@ namespace enzo_estoque.Controllers
             }
             return View(fornecedor);
         }
-
+        [Authorize]
         // GET: Fornecedors/Create
         public ActionResult Create()
         {
@@ -45,6 +45,7 @@ namespace enzo_estoque.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,RazaoSocial,NomeFantasia,Telefone,Endereco,Cidade,Email,Cnpj")] Fornecedor fornecedor)
         {
@@ -77,6 +78,7 @@ namespace enzo_estoque.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,RazaoSocial,NomeFantasia,Telefone,Endereco,Cidade,Email,Cnpj")] Fornecedor fornecedor)
         {
@@ -90,6 +92,7 @@ namespace enzo_estoque.Controllers
         }
 
         // GET: Fornecedors/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -106,6 +109,7 @@ namespace enzo_estoque.Controllers
 
         // POST: Fornecedors/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {

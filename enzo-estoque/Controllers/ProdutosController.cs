@@ -13,8 +13,8 @@ namespace enzo_estoque.Controllers
     public class ProdutosController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
         // GET: Produtos
+        [Authorize]
         public ActionResult Index()
         {
             var produtoes = db.Produtoes.Include(p => p.Fornecedor);
@@ -37,6 +37,7 @@ namespace enzo_estoque.Controllers
         }
 
         // GET: Produtos/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.FornecedorId = new SelectList(db.Fornecedors, "ID", "RazaoSocial");
@@ -62,6 +63,7 @@ namespace enzo_estoque.Controllers
         }
 
         // GET: Produtos/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -81,6 +83,7 @@ namespace enzo_estoque.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Descricao,EstoqueInicial,PrecoBase,FornecedorId")] Produto produto)
         {
@@ -95,6 +98,7 @@ namespace enzo_estoque.Controllers
         }
 
         // GET: Produtos/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -111,6 +115,7 @@ namespace enzo_estoque.Controllers
 
         // POST: Produtos/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {

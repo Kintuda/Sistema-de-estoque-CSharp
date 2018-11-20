@@ -31,7 +31,7 @@ namespace enzo_estoque.Models
         public string EnderecoDeEntrega { get; set; }
         public TipoSituacao Situacao { get; set; }
         public TipoPagamento Pagamento { get; set; }
-       //public virtual ICollection<Produto> Produtos { get; set; }
+        public virtual ICollection<Produto> Produtos { get; set; }
         public DateTime DataVenda { get; set; }
         public DateTime DataPagamento { get; set; }
     }

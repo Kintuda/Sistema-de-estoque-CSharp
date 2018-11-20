@@ -1,32 +1,29 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<div class="container" style="margin-top:10px">
-    <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="container" style="margin-top:10px;background-image:url('https://www.doofinder.com/en/blog/is-it-possible-to-sell-without-stock')">
+    <div class="jumbotron" style="background-image:url('https://doofindermedia.s3.amazonaws.com/blog/2016/12/27/vender_por_internet_sin_stock.jpg');background-size:cover">
+        <h1>Enzo-Estoque</h1>
+        <p class="lead" style="color:snow">Enzo estoque é um serviço de controle de estoque.</p>
     </div>
 
     <div class="row">
         <div class="col-md-4">
-            <h2>Getting started</h2>
+            <h2>Primeira vez</h2>
             <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
+                Se você ainda não possui uma conta cadastrada no sistema, se cadastre clicando nesse botão 
             </p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+            <p><a class="btn btn-secondary" role="button" href='@Url.Action("Register","Account", new { id = "registerLink"})'>Registrar</a></p>
         </div>
         <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+            <h2>Já possui um cadastro</h2>
+            <p>Agora se já possui um cadastro ativo, apenas realize seu login no botão abaixo.</p>
+            <p><a class="btn btn-secondary" role="button" href='@Url.Action("Login","Account", new { id = "loginLink"})'>Login</a></p>
         </div>
         <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+            <h2>Saiba mais</h2>
+            <p>Se quiser ver mais sobre o projeto, você pode participar do projeto acessando por esse link abaixo.</p>
+            <p><a class="btn btn-secondary" role="button" href="https://github.com/Kintuda/Sistema-de-estoque-CSharp">Participe do projeto&raquo;</a></p>
         </div>
     </div>
 </div>

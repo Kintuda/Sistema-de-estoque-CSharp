@@ -5,11 +5,11 @@
     {
     @Html.AntiForgeryToken()
 
-    <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-right"  style="display:flex;flex-direction:row;">
         <li>
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            @Html.ActionLink("Bem vindo " + User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
         </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        <li><a class="btn btn-sm btn-secondary" href="javascript:document.getElementById('logoutForm').submit()" style="margin-left:10px;">Logout</a></li>
     </ul>
     }
 }
@@ -17,7 +17,7 @@ else
 {
     <ul class="nav navbar-nav navbar-right" style="display:flex;flex-direction:row;">
         <a class="btn btn-secondary" role="button" href='@Url.Action("Login","Account", new { id = "loginLink"})' style="margin-right:10px;border-radius:5px;background-color: #f8f8f8;color:gray;box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">Login</a>
-        <a class="btn btn-secondary" role="button" href='@Url.Action("Register","Account", new { id = "registerLink"})' style="border-radius:5px;background-color: #f8f8f8;color:gray;box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">Registrar</a>
+        <a vclass="btn btn-secondary" role="button" href='@Url.Action("Register","Account", new { id = "registerLink"})' style="border-radius:5px;background-color: #f8f8f8;color:gray;box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">Registrar</a>
     </ul>
 }
 
