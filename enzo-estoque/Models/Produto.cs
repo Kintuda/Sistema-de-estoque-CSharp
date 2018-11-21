@@ -13,5 +13,6 @@ namespace enzo_estoque.Models
         public float PrecoBase{ get; set; }
         public int FornecedorID { get; set; }
         public virtual Fornecedor Fornecedor { get; set; }
+        public virtual ICollection<Venda> Vendas{ get; set; }
     }
 }

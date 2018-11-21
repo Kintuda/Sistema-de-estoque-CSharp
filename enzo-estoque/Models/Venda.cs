@@ -28,12 +28,13 @@ namespace enzo_estoque.Models
         public float Valor { get; set; }
         public bool Desconto { get; set; }
         public float ValorDesconto { get; set; }
+        public float Quantidade { get; set; }
         public string EnderecoDeEntrega { get; set; }
         public TipoSituacao Situacao { get; set; }
         public TipoPagamento Pagamento { get; set; }
-        public virtual ICollection<Produto> Produtos { get; set; }
+        public int ProdutoID { get; set; }
+        public virtual Produto Produto { get; set; }
         public DateTime DataVenda { get; set; }
-        public DateTime DataPagamento { get; set; }
     }
 }
 

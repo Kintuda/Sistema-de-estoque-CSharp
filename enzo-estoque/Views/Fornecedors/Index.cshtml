@@ -4,11 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Fornecedores <a class="btn btn-sm btn-secondary" role="button" href='@Url.Action("Create","Fornecedors", new { id = "loginLink"})'>Criar</a></h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
+
 <table class="table">
     <tr>
         <th>
@@ -59,9 +58,9 @@
             @Html.DisplayFor(modelItem => item.Cnpj)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            <a class="btn btn-sm btn-secondary" role="button" href='@Url.Action("Edit","Fornecedors", new { id = item.ID})'> <span data-feather="edit">Editar</span></a>
+            <a class="btn btn-sm btn-secondary" role="button" href='@Url.Action("Details","Fornecedors", new { id = item.ID})'> <span data-feather="menu">Detalhes</span></a>
+            <a class="btn btn-sm btn-secondary" role="button" href='@Url.Action("Delete","Fornecedors", new { id = item.ID})'> <span data-feather="trash">Detalhes</span></a>
         </td>
     </tr>
 }
