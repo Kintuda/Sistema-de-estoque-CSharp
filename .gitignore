@@ -9,7 +9,6 @@
 *.dll.config
 *.cache
 *.suo
-*.mdf
 # Include dlls if they’re in the NuGet packages directory
 !/packages/*/lib/*.dll
 !/packages/*/lib/*/*.dll
@@ -53,8 +52,6 @@ TestResults/
 ######################
 *.log
 *.sqlite
-*.lock
-*.mdf
 # OS generated files #
 ######################
 .DS_Store?
